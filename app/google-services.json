@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "156646783996",
+    "project_id": "swimsuitshop-e5ac3",
+    "storage_bucket": "swimsuitshop-e5ac3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156646783996:android:40f64150c66cfcdf7b1079",
+        "android_client_info": {
+          "package_name": "com.example.swimsuitwebshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156646783996-gsldv6bl20aijeet8umj23opm3hme6ik.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.swimsuitwebshop",
+            "certificate_hash": "a1648c4fb25c83c9ba562ecdab54e90029aef365"
+          }
+        },
+        {
+          "client_id": "156646783996-o1odburi3vesq4l6cuvr1d715mp52ccn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXGp9Lci85ETXzWxtnrbqs_cS3UPHb_Ro"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156646783996-o1odburi3vesq4l6cuvr1d715mp52ccn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

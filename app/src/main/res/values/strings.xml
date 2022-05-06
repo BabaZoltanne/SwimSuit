@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SwimsuitWebshop</string>
+    <string name="password">Jelszó</string>
+    <string name="name">Név</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="registration">Regisztráció</string>
+    <string name="email">Email-cím</string>
+    <string name="passAgain">Jelszó újra</string>
+    <string name="cancel">mégse</string>
+    <string name="loginEmail">Bejelentkezés emaillel</string>
+</resources>
