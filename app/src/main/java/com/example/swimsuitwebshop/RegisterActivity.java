@@ -40,10 +40,10 @@ public class RegisterActivity extends AppCompatActivity {
             finish();
         }*/
 
-        EditText userNameEditText = findViewById(R.id.userNameEditText);
-        EditText emailEditText = findViewById(R.id.emailEditText);
-        EditText passwordEditText = findViewById(R.id.passwordEditText);
-        EditText passAgainEditText = findViewById(R.id.passAgainEditText);
+        userNameEditText = findViewById(R.id.userNameEditText);
+        emailEditText = findViewById(R.id.emailEditText);
+        passwordEditText = findViewById(R.id.passwordEditText);
+        passAgainEditText = findViewById(R.id.passAgainEditText);
 
         preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
         String userName = preferences.getString("userName", "");

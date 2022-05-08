@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText userNameET = findViewById(R.id.editTextUserName);
-        EditText passwordET = findViewById(R.id.editTextPassword);
+        userNameET = findViewById(R.id.editTextUserName);
+        passwordET = findViewById(R.id.editTextPassword);
 
         preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
         mAuth = FirebaseAuth.getInstance();
