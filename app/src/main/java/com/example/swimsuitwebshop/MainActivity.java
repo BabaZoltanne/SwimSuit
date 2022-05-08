@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void register(View view) {
         Intent intent = new Intent(this, RegisterActivity.class);
-        //intent.putExtra("SECRET_KEY", 23);
+        intent.putExtra("SECRET_KEY", 23);
         startActivity(intent);
     }
 

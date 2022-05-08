@@ -10,4 +10,44 @@
     <string name="loginEmail">Bejelentkezés emaillel</string>
     <string name="item_placeholder">item_placeholder</string>
     <string name="item_info_placeholder">item_info_placeholder</string>
+
+    <string-array name="shopping_item_names">
+        <item>Bikini</item>
+        <item>Egyrészes</item>
+        <item>Férfi</item>
+        <item>Gyerek</item>
+        <item>Úszópelenka</item>
+    </string-array>
+
+    <string-array name="shopping_item_desc">
+        <item>Ez egy kétrészes fürdőruha.</item>
+        <item>Ez egy egyrészes fürdőruha.</item>
+        <item>Ez egy férfi fürdőruha.</item>
+        <item>Ez egy gyerek fürdőruha.</item>
+        <item>Ez egy úszópelenka.</item>
+    </string-array>
+
+    <array name="shopping_item_rates">
+        <item>3.5</item>
+        <item>5</item>
+        <item>4</item>
+        <item>1.5</item>
+        <item>5</item>
+    </array>
+
+    <array name="shopping_item_images">
+        <item>@drawable/ket</item>
+        <item>@drawable/egy</item>
+        <item>@drawable/man</item>
+        <item>@drawable/gyerekk</item>
+        <item>@drawable/pelus</item>
+    </array>
+
+    <array name="shopping_item_price">
+        <item>100 Dv</item>
+        <item>150 Dv</item>
+        <item>500 Dv</item>
+        <item>300 Dv</item>
+        <item>180 Dv</item>
+    </array>
 </resources>

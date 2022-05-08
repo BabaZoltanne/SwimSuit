@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -40,6 +42,12 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
         ShoppingItem currentItem = mShoppingItemsData.get(position);
 
         holder.bindTo(currentItem);
+
+        if (holder.getAdapterPosition() > lastPosition) {
+            Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_row);
+            holder.itemView.startAnimation(animation);
+            lastPosition = holder.getAdapterPosition();
+        }
     }
 
     @Override
