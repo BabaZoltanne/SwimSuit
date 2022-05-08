@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -15,8 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapter.ViewHolder>{
+public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapter.ViewHolder> implements Filterable {
     private ArrayList<ShoppingItem> mShoppingItemsData;
     private ArrayList<ShoppingItem> mShoppingItemsDataAll;
     private Context mContext;
@@ -44,6 +47,42 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
     public int getItemCount() {
         return mShoppingItemsData.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return ShoppingFilter;
+    }
+
+    private Filter ShoppingFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            ArrayList<ShoppingItem> filteredList = new ArrayList<>();
+            FilterResults results = new FilterResults();
+
+            if (charSequence == null || charSequence.length() == 0) {
+                results.count = mShoppingItemsDataAll.size();
+                results.values = mShoppingItemsDataAll;
+            } else {
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for(ShoppingItem item : mShoppingItemsDataAll) {
+                    if (item.getName().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+                results.count = filteredList.size();
+                results.values = filteredList;
+            }
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            mShoppingItemsData = (ArrayList)filterResults.values;
+            notifyDataSetChanged();
+        }
+    };
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mTitleText;
