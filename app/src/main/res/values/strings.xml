@@ -8,4 +8,6 @@
     <string name="passAgain">Jelszó újra</string>
     <string name="cancel">mégse</string>
     <string name="loginEmail">Bejelentkezés emaillel</string>
+    <string name="item_placeholder">item_placeholder</string>
+    <string name="item_info_placeholder">item_info_placeholder</string>
 </resources>

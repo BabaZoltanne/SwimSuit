@@ -5,13 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.hardware.biometrics.BiometricPrompt;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -32,11 +34,11 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        int secret_key = getIntent().getIntExtra("SECRET_KEY", 0);
+        //int secret_key = getIntent().getIntExtra("SECRET_KEY", 0);
 
-        if(secret_key != 23) {
+        /*if(secret_key != 23) {
             finish();
-        }
+        }*/
 
         EditText userNameEditText = findViewById(R.id.userNameEditText);
         EditText emailEditText = findViewById(R.id.emailEditText);
@@ -69,13 +71,13 @@ public class RegisterActivity extends AppCompatActivity {
         Log.i(LOG_TAG,"Regisztrált: " + userName + ",email: " + email + ",jelszó: " + password + ",jelszó újra: " + passAgain);
         //startShopping();
 
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new onCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
-            public void OnComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()) {
-                    Log.d(LOG_TAG, "User created successfully.");
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Log.d(LOG_TAG, "User created successfully");
                     startShopping();
-                }else {
+                } else {
                     Log.d(LOG_TAG, "User wasn't created successfully.");
                     Toast.makeText(RegisterActivity.this, "User wasn't created successfully." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
@@ -90,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void startShopping() {
         Intent intent = new Intent(this, ProductsActivity.class);
-        intent.putExtra("SECRET_KEY", SECRET_KEY);
+        //intent.putExtra("SECRET_KEY", SECRET_KEY);
         startActivity(intent);
     }
 

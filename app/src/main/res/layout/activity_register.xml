@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:hint="@string/name"
-        android:layout_below="@id/registrationTextview" />
+        android:layout_below="@+id/registrationTextview" />
 
     <EditText
         android:id="@+id/emailEditText"
